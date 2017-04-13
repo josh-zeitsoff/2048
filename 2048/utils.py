@@ -59,6 +59,20 @@ def pause(seconds):
     """
     time.sleep(seconds);
 
+def made_move(board):
+    for row in board:
+        for piece in row:
+            if piece != '*':
+                return True;
+    return False;
+
+def num_pieces(board):
+    num_pieces = 0
+    for row in board:
+        for piece in row:
+            if piece != '*':
+                num_pieces += 1;
+    return num_pieces;
 
 def make_board(N):
     """

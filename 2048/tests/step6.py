@@ -6,7 +6,7 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> tarter.swap(board)
+          >>> starter.swap(board)
           False
           """,
           'hidden': False,

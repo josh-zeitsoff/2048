@@ -6,11 +6,8 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> for j in range(N):
+          >>> for j in range(N**2):
           ...     starter.place_random(board);
-          ...     utils.print_board(board);
-          ...     print("There should be ", (i+1)*(j+1), " spots filled. Pausing for 2 seconds...");
-          ...     utils.pause(2);
           >>> utils.board_full(board)
           True
           """,
@@ -40,8 +37,7 @@ test = {
           ...          elif piece == '4':  four += 1;
           ...          elif piece == '8':  eight += 1;
           ...          else:
-          ...               print("Incorrect piece found: ", piece);
-          ...               print("Examine to_place and place piece more carefully... Quitting now");
+          ...               continue;
           >>> empty == 0
           True
           >>> two > four > eight
@@ -63,8 +59,10 @@ test = {
       'setup': r"""
       >>> import starter_2048 as starter
       >>> import utils
-      >>> N = 4
+      >>> N = 10
       >>> board = utils.make_board(N)
+      >>> while not utils.board_full(board):
+      ...   starter.place_random(board);
       """,
       'teardown': '',
       'type': 'doctest'

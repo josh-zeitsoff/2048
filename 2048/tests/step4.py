@@ -6,19 +6,21 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> utils.clear();
-          >>> utils.pause(3.5);
           >>> starter.end_move(board);
-          >>> utils.pause(3.5);
-          >>> starter.end_move(board);
-          >>> utils.pause(4);
-          >>> now = time.time();
-          >>> starter.end_move(board);
-          >>> after = time.time();
-          >>> after - now > .2
+          >>> utils.made_move(board)
           True
-          >>> utils.clear();
-
+          >>> utils.num_pieces(board) == 1
+          True
+          >>> starter.end_move(board);
+          >>> utils.made_move(board)
+          True
+          >>> utils.num_pieces(board) == 2
+          True
+          >>> starter.end_move(board);
+          >>> utils.made_move(board)
+          True
+          >>> utils.num_pieces(board) == 3
+          True
           """,
           'hidden': False,
           'locked': False

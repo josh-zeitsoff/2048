@@ -75,13 +75,13 @@ test = {
       'cases': [
         {
           'code': r"""
-           >>> board = utils.make_board(2);
-           ... starter.place_piece('1', 0, 0, board);
-           ... starter.place_piece('0', 1, 0, board);
-           ... starter.place_piece('0', 0, 1, board);
-           ... starter.place_piece('1', 1, 1, board);
-           >>> starter.have_lost(board)
-           True
+          >>> board = utils.make_board(2);
+          ... starter.place_piece('1', 0, 0, board);
+          ... starter.place_piece('0', 1, 0, board);
+          ... starter.place_piece('0', 0, 1, board);
+          ... starter.place_piece('1', 1, 1, board);
+          >>> starter.have_lost(board)
+          True
           """,
           'hidden': False,
           'locked': False

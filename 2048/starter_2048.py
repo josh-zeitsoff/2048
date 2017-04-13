@@ -266,18 +266,18 @@ def end_move(board):
     """
     
     #Print the board
-    clear()
-    print_board(board)
+    #clear()
+    #print_board(board)
 
     #Pause for .2 seconds
-    pause(.2)
+    #pause(.2)
 
     #Place a random piece on the board at a random (x,y) position
     place_random(board)
 
     #Print the board again
-    clear()
-    print_board(board)
+    #clear()
+    #print_board(board)
 
 #End of Step 4 #############################################################################################
 
