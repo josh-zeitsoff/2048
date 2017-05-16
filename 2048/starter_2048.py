@@ -84,7 +84,7 @@ def main():
         key = get_key_press()
 
         #Quit case ('q')
-        if key == 32:
+        if key == 113:
             print("Game Finished!");
             quit()
 
@@ -105,7 +105,7 @@ def main():
             swipe_left(board)
 
         #Space bar
-        elif key == 113:
+        elif key == 32:
             swap(board);
 
         #Check to see if I've lost at the end of the game or not
@@ -266,18 +266,18 @@ def end_move(board):
     """
     
     #Print the board
-    #clear()
-    #print_board(board)
+    clear()
+    print_board(board)
 
     #Pause for .2 seconds
-    #pause(.2)
+    pause(.2)
 
     #Place a random piece on the board at a random (x,y) position
     place_random(board)
 
     #Print the board again
-    #clear()
-    #print_board(board)
+    clear()
+    print_board(board)
 
 #End of Step 4 #############################################################################################
 
@@ -403,26 +403,77 @@ def swipe_down(board):
 ############################################################################################################
 
 def swap(board):
-    """
-    Optional Challenge: an addition to our game that adds some randomness and chance!
-    Randomly swaps 2 different numbers on the board and returns True if a swap is performed and False otherwise
-    Purpose: allows you to evade losing for a little while longer (if the swap is useful)
-    
-    Note: have_lost does not take into account possible swaps that can "save the day". This is expected behavior.
-    """
-    
-    print("Not implemented yet!")
-    return False
+    #Extra for Experts: an addition to our game that adds some randomness and chance!
+    #Randomly swaps 2 different numbers on the board (only have one swap per game!)
+    #Purpose: allows you to evade losing for a little while longer if the swap is useful
+    #Key Concept: Can you explain why swapping two different numbers randomly might be useful?
+    #print("Not implemented yet!");
+    #return;
 
+    #or
+
+    N = len(board);
+
+    #Check that a swap can occur on the board (2 unique numbers/pieces)
+    if not swap_possible(board):    
+        return False;
+
+
+    #Getting the first random piece to swap
+    found = False;
+    while not found:
+        random_x1 = int(random.random() * N);
+        random_y1 = int(random.random() * N);
+
+        first_random_piece = get_piece(random_x1, random_y1, board);
+
+        found = first_random_piece != '*';
+
+    #Getting the second random piece to swap
+    found = False;
+    while not found:
+        random_x2 = int(random.random() * N);
+        random_y2 = int(random.random() * N);
+
+        second_random_piece = get_piece(random_x2, random_y2, board);
+
+        found = second_random_piece != '*' and second_random_piece != first_random_piece;
+
+
+    #Swap the first and second pieces
+    place_piece(second_random_piece, random_x1, random_y1, board);
+    place_piece(first_random_piece, random_x2, random_y2, board);
+
+    #An action was taken, so return true
+    return True;
 
 def swap_possible(board):
-    """
-    Optional Challenge: helper function for swap
-    Returns True if a swap is possible on the given board and False otherwise
-    """
-    
-    print("Not implemented yet!")
-    return False
+    #Extra for experts helper function for swap
+    #Returns True if a swap is possible on the given board and False otherwise
+
+    #print("Not implemented yet!");
+    #return False;
+
+    #or
+
+    N = len(board)
+
+    container = set();
+    for y in range(N):
+        for x in range(N):
+            piece_at_xy = get_piece(x, y, board);
+
+            #Don't add empty spaces (they obviously can't be swapped...)
+            if piece_at_xy != '*':  container.add(piece_at_xy);
+
+    unique_pieces = len(container);
+
+    if unique_pieces < 2:
+        print("Cannot swap");
+        return False;
+
+    return True;
+
 
 
 

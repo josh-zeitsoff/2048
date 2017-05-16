@@ -1,13 +1,14 @@
 test = {
-  'name': 'Place',
+  'name': 'SwapPossible',
   'points': 3,
   'suites': [
     {
       'cases': [
         {
           'code': r"""
-          >>> starter.swap(board)
-          False
+          >>> assert not starter.swap_possible(board), "An empty board cannot perform swap"
+          >>> calls
+          ['print']
           """,
           'hidden': False,
           'locked': False
@@ -19,6 +20,10 @@ test = {
       >>> import utils
       >>> N = 4
       >>> board = utils.make_board(N)
+      >>> calls = []
+      >>> def test_print(message):
+      ...     calls.append('print') # do not actually print
+      >>> starter.print = test_print
       """,
       'teardown': '',
       'type': 'doctest'
@@ -27,12 +32,11 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> starter.place_piece('2', 0, 0, board);
-          >>> starter.swap(board)
-          False
-          >>> starter.place_piece('2', 1, 1, board);
-          >>> starter.swap(board)
-          False
+          >>> starter.place_piece('0', 0, 0, board)
+          True
+          >>> assert not starter.swap_possible(board), "A board with 1 piece cannot perform swap"
+          >>> calls
+          ['print']
           """,
           'hidden': False,
           'locked': False
@@ -44,6 +48,10 @@ test = {
       >>> import utils
       >>> N = 4
       >>> board = utils.make_board(N)
+      >>> calls = []
+      >>> def test_print(message):
+      ...     calls.append('print') # do not actually print
+      >>> starter.print = test_print
       """,
       'teardown': '',
       'type': 'doctest'
@@ -52,19 +60,11 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> board = utils.make_board(4);
-          >>> starter.place_piece('2', 0, 0, board);
-          >>> starter.place_piece('4', 1, 0, board);
-          >>> starter.swap(board)
+          >>> starter.place_piece('0', 1, 1, board)
           True
-          >>> starter.get_piece(0,0,board)=='4'
-          True
-          >>> starter.get_piece(1,0,board)=='2'
-          True
-          >>> starter.get_piece(0,1,board)=='*'
-          True
-          >>> starter.get_piece(1,1,board)=='*'
-          True
+          >>> assert not starter.swap_possible(board), "A board with 2 identical pieces cannot perform swap"
+          >>> calls
+          ['print']
           """,
           'hidden': False,
           'locked': False
@@ -76,6 +76,10 @@ test = {
       >>> import utils
       >>> N = 4
       >>> board = utils.make_board(N)
+      >>> calls = []
+      >>> def test_print(message):
+      ...     calls.append('print') # do not actually print
+      >>> starter.print = test_print
       """,
       'teardown': '',
       'type': 'doctest'
@@ -84,19 +88,11 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> board = utils.make_board(4);
-          >>> starter.place_piece('2', 0, 0, board);
-          >>> starter.place_piece('4', 1, 1, board);
-          >>> starter.swap(board)
+          >>> starter.place_piece('0', 1, 1, board)
           True
-          >>> starter.get_piece(0,0,board)=='4'
+          >>> starter.place_piece('1', 0, 1, board)
           True
-          >>> starter.get_piece(1,1,board)=='2'
-          True
-          >>> starter.get_piece(0,1,board)=='*'
-          True
-          >>> starter.get_piece(1,0,board)=='*'
-          True
+          >>> assert starter.swap_possible(board), "A board with 2 unique pieces should be able to perform swap";
           """,
           'hidden': False,
           'locked': False
@@ -106,40 +102,11 @@ test = {
       'setup': r"""
       >>> import starter_2048 as starter
       >>> import utils
-      >>> board = utils.make_board(10)
-      """,
-      'teardown': '',
-      'type': 'doctest'
-    },
-    {
-      'cases': [
-        {
-          'code': r"""
-          >>> board = utils.make_board(4);
-          >>> starter.place_piece('2', 0, 0, board);
-          >>> starter.place_piece('4', 0, 1, board);
-          >>> starter.place_piece('8', 1, 0, board);
-          >>> starter.swap(board)
-          True
-          >>> if starter.get_piece(0,0,board)=='2':
-          ...     return starter.get_piece(0,1,board)=='8' and  starter.get_piece(1,0,board)=='4' and  starter.get_piece(1,1,board)=='*'
-          True
-          >>> if starter.get_piece(0,0,board)=='4':
-          ...     return starter.get_piece(0,1,board)=='2' and  starter.get_piece(1,0,board)=='8' and starter.get_piece(1,1,board)=='*'
-          True
-          >>> if starter.get_piece(0,0,board)=='8':
-          ...     return starter.get_piece(0,1,board)=='4' and  starter.get_piece(1,0,board)=='2' and  starter.get_piece(1,1,board)=='*'
-          >>>
-          """,
-          'hidden': False,
-          'locked': False
-        }
-      ],
-      'scored': True,
-      'setup': r"""
-      >>> import starter_2048 as starter
-      >>> import utils
-      >>> board = utils.make_board(10)
+      >>> board = utils.make_board(4)
+      >>> calls = []
+      >>> def test_print(message):
+      ...     calls.append('print') # do not actually print
+      >>> starter.print = test_print
       """,
       'teardown': '',
       'type': 'doctest'

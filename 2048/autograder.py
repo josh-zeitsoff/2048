@@ -219,7 +219,7 @@ def tests_2048():
             assert starter.get_piece(0,0,board)=='4', "The pieces are not correctly swapped. \nYou shoudn't swap randomly, not staticly. \ncheck your swap functions again.";
             assert starter.get_piece(1,1,board)=='2', "The pieces are not correctly swapped. \nYou shoudn't swap randomly, not staticly. \ncheck your swap functions again.";
             assert starter.get_piece(0,1,board)=='*', "There shoudn't be pieces added to empty places. check your swap functions again.";
-            assert starter.get_piece(1,0,board)=='*', "There shoudn't be pieces added to empty places. check your swap functions again.";
+            assert starter.get_piece(1,0,board)=='*', "There shoudn't be pieces added to empty places. check your swap functions again."
 
 
             #check against swapping of multiple pieces

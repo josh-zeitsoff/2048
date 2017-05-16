@@ -6,10 +6,8 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> starter.get_piece(-1, -1, board) == None
-          True
-          >>> starter.get_piece(N, N, board) == None
-          True
+          >>> assert starter.get_piece(-1, -1, board) == None, "Not returning None properly during an invalid get or misunderstanding of spec w/ invalid inputs";
+          >>> starter.get_piece(N, N, board) == None, "Not returning False properly during an invalid place or misunderstanding of spec w/ invalid inputs";
           """,
           'hidden': False,
           'locked': False
@@ -29,10 +27,8 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> starter.place_piece('*', -1, -1, board)
-          False
-          >>> starter.place_piece('*', N, N, board)
-          False
+          >>> assert not starter.place_piece('*', -1, -1, board),"Not returning False properly during an invalid place or misunderstanding of spec w/ invalid inputs";
+          >>> assert not starter.place_piece('*', N, N, board), "Not returning False properly during an invalid place or misunderstanding of spec w/ invalid inputs";
           """,
           'hidden': False,
           'locked': False
@@ -60,8 +56,7 @@ test = {
           ...          raise AssertionError("Placed a piece at {} {} but did not get same piece back".format(x, y))
           ...        to_place = chr(ord(to_place) + 1)
           >>> # The board needs to be full after placing these pieces
-          >>> utils.board_full(board)
-          True
+          >>> assert utils.board_full(board), "N by N Board needs to be full after N*N calls to place_piece at different (x,y) coordinates";
           """,
           'hidden': False,
           'locked': False
@@ -82,10 +77,8 @@ test = {
         {
           'code': r"""
           >>> # Checks against data abstraction violations
-          >>> starter.place_piece('7', 7, 7, board)
-          True
-          >>> starter.get_piece(7, 7, board) == None
-          False
+          >>> assert starter.place_piece('7', 7, 7, board), "Abstraction violation. Hard-coded bounds in place_piece. Use the board's dimensions";
+          >>> assert not starter.get_piece(7, 7, board) == None, "Abstraction violation. Hard-coded bounds in get_piece. Use the board's dimensions";
           """,
           'hidden': False,
           'locked': False

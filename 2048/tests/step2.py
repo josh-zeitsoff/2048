@@ -8,8 +8,7 @@ test = {
           'code': r"""
           >>> for j in range(N**2):
           ...     starter.place_random(board);
-          >>> utils.board_full(board)
-          True
+          >>> assert utils.board_full(board), "N by N Board needs to be full after N*N calls to place_random";
           """,
           'hidden': False,
           'locked': False
@@ -38,18 +37,12 @@ test = {
           ...          elif piece == '8':  eight += 1;
           ...          else:
           ...               continue;
-          >>> empty == 0
-          True
-          >>> two > four > eight
-          True
-          >>> 75 >= two >= 45
-          True
-          >>> 50 >= four >= 25
-          True
-          >>> 10 >= eight >= 1
-          True
-          >>> two + four + eight == 100
-          True
+          >>> assert empty == 0, "If board is full, there shouldn't be empty spaces";
+          >>> assert two > four > eight, "Test failed. Ratio is improbable";
+          >>> assert 75 >= two >= 45, "There don't seem to be enough 2's. Test failed.";         
+          >>> assert 50 >= four >= 25, "There don't seem to be enough 4's. Test failed.";         
+          >>> assert 10 >= eight >= 1, "There don't seem to be enough 8's. Test failed ... BUT retry 1 time";     
+          >>> assert two + four + eight == 100, "There should only be 2s, 4s, and 8s placed by random";
           """,
           'hidden': False,
           'locked': False

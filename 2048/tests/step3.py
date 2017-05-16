@@ -6,8 +6,7 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> starter.have_lost(board)
-          False
+          >>> assert not starter.have_lost(board), "An empty board should not lose";
           """,
           'hidden': False,
           'locked': False
@@ -28,8 +27,7 @@ test = {
         {
           'code': r"""
           >>> starter.place_piece('0', 0, 0, board);
-          >>> starter.have_lost(board)
-          False
+          >>> assert not starter.have_lost(board), "A board with 1 piece should not lose";
           """,
           'hidden': False,
           'locked': False
@@ -54,8 +52,7 @@ test = {
           ... starter.place_piece('0', 1, 0, board);
           ... starter.place_piece('0', 0, 1, board);
           ... starter.place_piece('0', 1, 1, board);
-          >>> starter.have_lost(board)
-          False
+          >>> assert not starter.have_lost(board), "A full board but with possible moves should not lose";
           """,
           'hidden': False,
           'locked': False
@@ -80,8 +77,7 @@ test = {
           ... starter.place_piece('0', 1, 0, board);
           ... starter.place_piece('0', 0, 1, board);
           ... starter.place_piece('1', 1, 1, board);
-          >>> starter.have_lost(board)
-          True
+          >>> assert starter.have_lost(board), "A full board with no possible moves should lose";
           """,
           'hidden': False,
           'locked': False
