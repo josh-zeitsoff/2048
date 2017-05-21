@@ -90,7 +90,7 @@ def main():
 
         #Up arrow
         elif key == 65:
-            swipe_up(board)
+            swipe_down(board)
 
         #Down arrow
         elif key == 66:
