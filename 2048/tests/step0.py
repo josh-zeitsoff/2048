@@ -11,12 +11,18 @@ test = {
           ...     try:
           ...         import getch
           ...     except ImportError:
-          ...         os.system("python3 -m pip install getch")
+          ...         try:
+          ...             subprocess.check_call(["sudo", "easy_install3", "getch"])
+          ...         except subprocess.CalledProcessError:
+          ...             os.system("python3 -m pip install getch")
           >>> def test_termcolor():
           ...     try:
           ...         import termcolor
           ...     except ImportError:
-          ...         os.system("python3 -m pip install termcolor")
+          ...         try:
+          ...             subprocess.check_call(["sudo", "easy_install3", "termcolor"])
+          ...         except subprocess.CalledProcessError:
+          ...             os.system("python3 -m pip install termcolor")
           >>> test_getch()
           >>> test_termcolor()
           """,
@@ -27,6 +33,7 @@ test = {
       'scored': True,
       'setup': r"""
       >>> import os as os
+      >>> import subprocess as subprocess
       """,
       'teardown': '',
       'type': 'doctest'
