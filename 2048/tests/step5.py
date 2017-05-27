@@ -5,7 +5,7 @@ test = {
     {
       'cases': [
         {
-          'answer': '57cb3e205aa13d0ca50ae503858875fe',
+          'answer': '3ec7e0142088997708592f1e52d5434a',
           'choices': [
             'Keeps track of whether swiping left actually did anything or not.',
             'Gets the piece at a given x and y position on the board.',
@@ -14,10 +14,10 @@ test = {
           ],
           'hidden': False,
           'locked': True,
-          'question': "'What does the function swipe_left do?'"
+          'question': 'What does the function swipe_left do?'
         },
         {
-          'answer': 'daefdfce8aabbf5b099f8573df66f4f0',
+          'answer': '7e1584bfcfbfc411f626a37c0b3930e2',
           'choices': [
             'If a piece was moved or not.',
             'If this function was called or not.',
@@ -29,7 +29,7 @@ test = {
           'question': "'What does the variable action_taken represent?'"
         },
         {
-          'answer': '50318ed647dadaacf9c3d2e3ec7850fc',
+          'answer': '5f75454988a92adff154ff457d884a3d',
           'choices': [
             'The number of squares along one side of the board.',
             'If the game has ended or not.',
@@ -41,7 +41,7 @@ test = {
           'question': "'What does the variable N represent?'"
         },
         {
-          'answer': '56f32582d516a6d37ecbe1b7ee46cb2e',
+          'answer': 'fd055b3b74081851cfbe47fdf4f9df89',
           'choices': [
             'Iteration through each column and row of the board.',
             'Iteration only through each column of the board.',
@@ -65,7 +65,7 @@ test = {
           'question': "'What are piece_at_xy and left_adjacent?'"
         },
         {
-          'answer': 'f9fbcefc3e6a5b94ec3c42d494981c28',
+          'answer': '52b1ebf73f00d2648a3fee0da47efc1c',
           'choices': [
             'I cannot move an empty piece, so just move on.',
             'I can move an empty piece, so I move it.',
@@ -77,7 +77,7 @@ test = {
           'question': "What happens if the piece_at_xy is an '*'?"
         },
         {
-          'answer': '8155bbf952810f4a6123ca0816d69ebb',
+          'answer': '9f6310136158a873a916893e981e16d0',
           'choices': [
             'I continue since I cannot do anything if the left_adjacent piece is off the edge of the board.',
             'I can swap a piece with None, so I swap piece_at_xy and left_adjacent.',
