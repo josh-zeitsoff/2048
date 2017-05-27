@@ -1,0 +1,97 @@
+{
+          'answer': 'daefdfce8aabbf5b099f8573df66f4f0',
+          'choices': [
+            'If a piece was moved or not.',
+            'If this function was called or not.',
+            'If a piece was placed on the board.',
+            'Nothing.'
+          ],
+          'hidden': False,
+          'locked': True,
+          'question': "'What does the variable action_taken represent?'"
+        },
+
+        {
+          'answer': '50318ed647dadaacf9c3d2e3ec7850fc',
+          'choices': [
+            'The number of squares along one side of the board.',
+            'If the game has ended or not.',
+            'Nothing, since we never assign it to anything.',
+            'Number of total squares on the board.'
+          ],
+          'hidden': False,
+          'locked': True,
+          'question': "'What does the variable N represent?'"
+        },
+        {
+          'answer': '56f32582d516a6d37ecbe1b7ee46cb2e',
+          'choices': [
+            'Iteration through each column and row of the board.',
+            'Iteration only through each column of the board.',
+            'Iteration only through each row of the board.',
+            'Nothing.'
+          ],
+          'hidden': False,
+          'locked': True,
+          'question': 'What does the "for y in range(N) and for x in range(N) represent"?'
+        },
+        {
+          'answer': '8fe0a22a1002c3905013752b65958c84',
+          'choices': [
+            'They are an adjacent pair of pieces.',
+            'They are 2 squares on the board.',
+            'They are 2 random pieces on the board.',
+            'There is no relationship between them.'
+          ],
+          'hidden': False,
+          'locked': True,
+          'question': "'What are piece_at_xy and left_adjacent?'"
+        },
+        {
+          'answer': 'f9fbcefc3e6a5b94ec3c42d494981c28',
+          'choices': [
+            'I cannot move an empty piece, so just move on.',
+            'I can move an empty piece, so I move it.',
+            'I place a new piece at the location of piece_at_xy.',
+            'Nothing.'
+          ],
+          'hidden': False,
+          'locked': True,
+          'question': "What happens if the piece_at_xy is an '*'?"
+        },
+        {
+          'answer': '8155bbf952810f4a6123ca0816d69ebb',
+          'choices': [
+            'I continue since I cannot do anything if the left_adjacent piece is off the edge of the board.',
+            'I can swap a piece with None, so I swap piece_at_xy and left_adjacent.',
+            'I place a new piece at the location of left_adjacent.',
+            'Nothing.'
+          ],
+          'hidden': False,
+          'locked': True,
+          'question': 'What happens if left_adjacent is None?'
+        },
+        {
+          'answer': 'b7fa3ed4b32c28bbd40ffe8e26ed3edf',
+          'choices': [
+            'It is moved to the left and action_taken is set to True.',
+            'It is moved to the left and action_taken is set to False.',
+            'It is not moved to the left and action taken is set to True.',
+            'Nothing.'
+          ],
+          'hidden': False,
+          'locked': True,
+          'question': 'What happens if I can move a piece left?'
+        },
+        {
+          'answer': '760b760b7fccc6710f5e1a16a436df7e',
+          'choices': [
+            'We end our move.',
+            'We keep going.',
+            'action_taken is never True.',
+            'Nothing.'
+          ],
+          'hidden': False,
+          'locked': True,
+          'question': 'What happens if action_taken is True"?'
+        }
