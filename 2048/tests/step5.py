@@ -5,7 +5,7 @@ test = {
     {
       'cases': [
         {
-          'answer': '3ec7e0142088997708592f1e52d5434a',
+          'answer': 'Keeps track of whether swiping left actually did anything or not.',
           'choices': [
             'Keeps track of whether swiping left actually did anything or not.',
             'Gets the piece at a given x and y position on the board.',
@@ -13,11 +13,11 @@ test = {
             'Checks if, at the end of the turn, the game has been lost.'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'question': 'What does the function swipe_left do?'
         },
         {
-          'answer': '7e1584bfcfbfc411f626a37c0b3930e2',
+          'answer': 'If a piece was moved or not.',
           'choices': [
             'If a piece was moved or not.',
             'If this function was called or not.',
@@ -25,11 +25,11 @@ test = {
             'Nothing.'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'question': "'What does the variable action_taken represent?'"
         },
         {
-          'answer': '5f75454988a92adff154ff457d884a3d',
+          'answer': 'The number of squares along one side of the board.',
           'choices': [
             'The number of squares along one side of the board.',
             'If the game has ended or not.',
@@ -37,11 +37,11 @@ test = {
             'Number of total squares on the board.'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'question': "'What does the variable N represent?'"
         },
         {
-          'answer': 'fd055b3b74081851cfbe47fdf4f9df89',
+          'answer': 'Iteration through each column and row of the board.',
           'choices': [
             'Iteration through each column and row of the board.',
             'Iteration only through each column of the board.',
@@ -49,11 +49,11 @@ test = {
             'Nothing.'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'question': 'What does the "for y in range(N) and for x in range(N) represent"?'
         },
         {
-          'answer': '8fe0a22a1002c3905013752b65958c84',
+          'answer': 'They are an adjacent pair of pieces.',
           'choices': [
             'They are an adjacent pair of pieces.',
             'They are 2 squares on the board.',
@@ -61,11 +61,11 @@ test = {
             'There is no relationship between them.'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'question': "'What are piece_at_xy and left_adjacent?'"
         },
         {
-          'answer': '52b1ebf73f00d2648a3fee0da47efc1c',
+          'answer': 'I cannot move an empty piece, so just move on.',
           'choices': [
             'I cannot move an empty piece, so just move on.',
             'I can move an empty piece, so I move it.',
@@ -73,11 +73,11 @@ test = {
             'Nothing.'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'question': "What happens if the piece_at_xy is an '*'?"
         },
         {
-          'answer': '9f6310136158a873a916893e981e16d0',
+          'answer': 'I continue since I cannot do anything if the left_adjacent piece is off the edge of the board.',
           'choices': [
             'I continue since I cannot do anything if the left_adjacent piece is off the edge of the board.',
             'I can swap a piece with None, so I swap piece_at_xy and left_adjacent.',
@@ -85,11 +85,11 @@ test = {
             'Nothing.'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'question': 'What happens if left_adjacent is None?'
         },
         {
-          'answer': 'b7fa3ed4b32c28bbd40ffe8e26ed3edf',
+          'answer': 'It is moved to the left and action_taken is set to True.',
           'choices': [
             'It is moved to the left and action_taken is set to True.',
             'It is moved to the left and action_taken is set to False.',
@@ -97,11 +97,11 @@ test = {
             'Nothing.'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'question': 'What happens if I can move a piece left?'
         },
         {
-          'answer': '760b760b7fccc6710f5e1a16a436df7e',
+          'answer': 'We end our move.',
           'choices': [
             'We end our move.',
             'We keep going.',
@@ -109,7 +109,7 @@ test = {
             'Nothing.'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'question': 'What happens if action_taken is True"?'
         }
       ],

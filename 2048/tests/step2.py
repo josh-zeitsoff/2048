@@ -6,8 +6,9 @@ test = {
       'cases': [
         {
           'code': r"""
-          >>> for j in range(N**2):
-          ...     starter.place_random(board);
+          >>> for j in range(N):
+          ...   for i in range(N):
+          ...      starter.place_random(board);
           >>> assert utils.board_full(board), "N by N Board needs to be full after N*N calls to place_random";
           """,
           'hidden': False,
@@ -19,7 +20,7 @@ test = {
       >>> import starter_2048 as starter
       >>> import utils
       >>> N = 4
-      >>> board = utils.make_board(N)
+      >>> board = utils.make_board(4)
       """,
       'teardown': '',
       'type': 'doctest'
